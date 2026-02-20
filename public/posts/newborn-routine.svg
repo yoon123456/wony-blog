@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1200" y2="675"><stop stop-color="#E9F8FF"/><stop offset="1" stop-color="#EAFCEB"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <text x="70" y="300" fill="#334155" font-size="62" font-family="sans-serif" font-weight="700">Newborn Routine</text>
+  <text x="70" y="365" fill="#475569" font-size="34" font-family="sans-serif">신생아 수유/수면 루틴 정리</text>
+</svg>

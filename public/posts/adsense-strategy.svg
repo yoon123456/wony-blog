@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1D9"/>
+      <stop offset="1" stop-color="#FFE1F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g2)"/>
+  <circle cx="1040" cy="120" r="85" fill="#FFD4A8"/>
+  <circle cx="180" cy="560" r="110" fill="#FFCFE6"/>
+  <text x="80" y="290" fill="#334155" font-size="62" font-family="sans-serif" font-weight="700">AdSense Content Strategy</text>
+  <text x="80" y="360" fill="#475569" font-size="34" font-family="sans-serif">Build trust and pass review faster</text>
+</svg>

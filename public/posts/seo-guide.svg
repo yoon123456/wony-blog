@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE3ED"/>
+      <stop offset="1" stop-color="#DDF5FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g1)"/>
+  <circle cx="220" cy="150" r="90" fill="#FFD1E0"/>
+  <circle cx="980" cy="530" r="120" fill="#CDEFFF"/>
+  <text x="80" y="290" fill="#334155" font-size="64" font-family="sans-serif" font-weight="700">Next.js SEO Guide</text>
+  <text x="80" y="360" fill="#475569" font-size="34" font-family="sans-serif">Search-ready blog setup checklist</text>
+</svg>

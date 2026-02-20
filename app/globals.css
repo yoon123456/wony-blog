@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-start: #fff9f2;
+  --bg-mid: #fff1f5;
+  --bg-end: #f5f8ff;
+  --text-main: #1f2937;
+  --text-soft: #5b6472;
+  --line-soft: #ffffff;
+}
+
+body {
+  font-family: var(--font-body), "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  color: var(--text-main);
+  background-image: radial-gradient(circle at 15% 10%, #ffd7e8 0, transparent 32%),
+    radial-gradient(circle at 90% 20%, #d8f5ff 0, transparent 30%),
+    linear-gradient(160deg, var(--bg-start), var(--bg-mid) 55%, var(--bg-end));
+  min-height: 100vh;
+}
+
+.brand-title {
+  font-family: var(--font-heading), "Comic Sans MS", cursive;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.pill-btn {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #ffe3ef;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.pill-btn:hover {
+  transform: translateY(-1px);
+  border-color: #ffbdd8;
+  box-shadow: 0 8px 20px rgba(255, 133, 179, 0.2);
+  color: #db2777;
+}
+
+.page-glow {
+  position: fixed;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  opacity: 0.45;
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.page-glow-left {
+  left: -4rem;
+  top: 8rem;
+  background: #ffcfe3;
+}
+
+.page-glow-right {
+  right: -4rem;
+  top: 16rem;
+  background: #cdefff;
+  animation-delay: 2s;
+}
+
+.soft-card {
+  border-radius: 1.1rem;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.fade-up {
+  animation: fadeUp 0.55s ease both;
+}
+
+.soft-muted {
+  color: var(--text-soft);
+}
+
+.prose {
+  color: #253041;
+}
+
+.prose :where(h1, h2, h3) {
+  color: #1f2a3d;
+}
+
+.prose a {
+  color: #0f766e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
