@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PostCardImage from "@/components/post-card-image";
-import { getAllPostsMeta, getCategoryStats } from "@/lib/posts";
+import { getAllPostsMeta, getCategoryStats, toCategorySlug } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "블로그",
