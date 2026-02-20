@@ -62,9 +62,15 @@ export default function PostEngagement({ slug }: PostEngagementProps) {
       return;
     }
 
+    const prevLiked = liked;
+    const prevLikes = likes;
+    const optimisticLiked = !prevLiked;
+    const optimisticLikes = optimisticLiked ? prevLikes + 1 : Math.max(0, prevLikes - 1);
+
     try {
       setSubmitting(true);
-      setErrorMessage("");
+      setLiked(optimisticLiked);
+      setLikes(optimisticLikes);
       const response = await fetch(`/api/engagement/${slug}/like`, {
         method: "POST"
       });
@@ -77,7 +83,9 @@ export default function PostEngagement({ slug }: PostEngagementProps) {
       setLikes(data.likesCount || 0);
       setLiked(Boolean(data.liked));
     } catch {
-      setErrorMessage("좋아요 처리에 실패했습니다.");
+      // Silent rollback when API fails.
+      setLiked(prevLiked);
+      setLikes(prevLikes);
     } finally {
       setSubmitting(false);
     }

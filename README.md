@@ -30,7 +30,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_GOOGLE_ADSENSE_ID=ca-pub-xxxxxxxxxxxxxxxx
 NEXT_PUBLIC_GOOGLE_ADSENSE_SLOT=1234567890
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_SECRET_KEY=your-service-role-key
 ```
 
 ## Supabase 설정
@@ -73,6 +73,7 @@ npm run generate:post -- --topic "임신 초기 영양제 가이드" --category 
 ```
 
 생성 결과:
+
 - `content/posts/<slug>.md` 파일 생성
 - frontmatter + 본문 + 참고 자료 링크 포함
 
@@ -85,6 +86,7 @@ npm run new:post -- --title "임신 초기 영양제 가이드" --category "임�
 ```
 
 생성 결과:
+
 - `content/posts/<slug>.md` 템플릿 파일 생성
 - frontmatter 자동 입력
 - 본문 위치(`# 본문`)에 ChatGPT 결과 붙여넣기만 하면 완료
