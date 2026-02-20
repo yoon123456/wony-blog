@@ -69,25 +69,23 @@ export default function HomePage() {
 							className="soft-card p-5"
 							style={{ animationDelay: `${index * 70}ms` }}
 						>
-							<PostCardImage src={post.coverImage} alt={post.title} />
 							<Link
 								href={`/blog/${post.slug}`}
-								className="text-lg font-bold text-slate-800 hover:text-rose-500"
+								aria-label={`${post.title} 상세 보기`}
+								className="flex h-full flex-col"
 							>
-								{post.title}
+								<PostCardImage src={post.coverImage} alt={post.title} />
+								<p className="text-lg font-bold text-slate-800">{post.title}</p>
+								<div className="mt-2">
+									<div className="inline-flex rounded-full border border-amber-100 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700">
+										{post.category}
+									</div>
+								</div>
+								<p className="mt-2 text-xs font-semibold text-slate-400">
+									{post.date}
+								</p>
+								<p className="mt-2 soft-muted">{post.description}</p>
 							</Link>
-							<div className="mt-2">
-								<Link
-									href={`/blog?category=${toCategorySlug(post.category)}`}
-									className="inline-flex rounded-full border border-amber-100 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700"
-								>
-									{post.category}
-								</Link>
-							</div>
-							<p className="mt-2 text-xs font-semibold text-slate-400">
-								{post.date}
-							</p>
-							<p className="mt-2 soft-muted">{post.description}</p>
 						</li>
 					))}
 				</ul>

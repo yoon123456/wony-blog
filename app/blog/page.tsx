@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PostCardImage from "@/components/post-card-image";
-import { getAllPostsMeta, getCategoryStats, toCategorySlug } from "@/lib/posts";
+import { getAllPostsMeta, getCategoryStats } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "블로그",
@@ -71,30 +71,31 @@ export default function BlogIndexPage({ searchParams }: BlogPageProps) {
             className="soft-card p-5"
             style={{ animationDelay: `${index * 60}ms` }}
           >
-            <PostCardImage src={post.coverImage} alt={post.title} />
-            <Link href={`/blog/${post.slug}`} className="text-2xl font-bold text-slate-800 hover:text-rose-500">
-              {post.title}
-            </Link>
-            <div className="mt-2">
-              <Link
-                href={`/blog?category=${toCategorySlug(post.category)}`}
-                className="inline-flex rounded-full border border-amber-100 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700"
-              >
+            <Link
+              href={`/blog/${post.slug}`}
+              aria-label={`${post.title} 상세 보기`}
+              className="flex h-full flex-col"
+            >
+              <PostCardImage src={post.coverImage} alt={post.title} />
+              <p className="text-2xl font-bold text-slate-800">{post.title}</p>
+              <div className="mt-2">
+                <div className="inline-flex rounded-full border border-amber-100 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700">
                 {post.category}
-              </Link>
-            </div>
-            <p className="mt-2 text-xs font-semibold text-slate-400">{post.date}</p>
-            <p className="mt-3 soft-muted">{post.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-rose-100 bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-500"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
+                </div>
+              </div>
+              <p className="mt-2 text-xs font-semibold text-slate-400">{post.date}</p>
+              <p className="mt-3 soft-muted">{post.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-rose-100 bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-500"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

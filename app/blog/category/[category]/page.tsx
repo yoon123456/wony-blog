@@ -57,22 +57,26 @@ export default function CategoryPage({ params }: Params) {
       <ul className="mt-6 space-y-4">
         {posts.map((post) => (
           <li key={post.slug} className="soft-card p-5 md:p-6">
-            <PostCardImage src={post.coverImage} alt={post.title} />
-            <Link href={`/blog/${post.slug}`} className="text-2xl font-bold text-slate-800 hover:text-rose-500">
-              {post.title}
+            <Link
+              href={`/blog/${post.slug}`}
+              aria-label={`${post.title} 상세 보기`}
+              className="flex h-full flex-col"
+            >
+              <PostCardImage src={post.coverImage} alt={post.title} />
+              <p className="text-2xl font-bold text-slate-800">{post.title}</p>
+              <p className="mt-2 text-xs font-semibold text-slate-400">{post.date}</p>
+              <p className="mt-3 soft-muted">{post.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-rose-100 bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-500"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
             </Link>
-            <p className="mt-2 text-xs font-semibold text-slate-400">{post.date}</p>
-            <p className="mt-3 soft-muted">{post.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-rose-100 bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-500"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
           </li>
         ))}
       </ul>
